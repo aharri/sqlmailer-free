@@ -1,0 +1,123 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>SMTP Tutorial</title>
+<meta name="Microsoft Theme" content="dark1 111, default">
+<meta name="Microsoft Border" content="tb, default">
+</head>
+
+<body background="dark-ripple-bg.jpg" bgcolor="#000000" text="#F0FFFF" link="#CCCC00" vlink="#999999" alink="#FF9900">
+
+<h1 align="center">SMTP Tutorial&nbsp;</h1>
+
+<p align="center">(From <a href="http://www.castellum.net/tutorials/smtp_tutorial.htm">http://www.castellum.net/tutorials/smtp_tutorial.htm</a>)</p>
+<hr align="center">
+<p align="center"><b><i>Simple Mail Transfer Protocol<br>
+</i></b>This tutorial is supposed to teach simple smtp commands and will allow
+you to see if your ISP blocks port 25.&nbsp; Hopefully after this you will have
+a general knowledge of how SMTP works and will be able to impress your
+friends.&nbsp; We will cover some more advanced stuff later.&nbsp;&nbsp; SMTP is
+a very easy protocol to learn and once you know it you can use it in your
+scripts and everything else.&nbsp; In the tutorial we will be using the windows
+telnet terminal.&nbsp; If your on another OS, most of them have equivalents.&nbsp;&nbsp;</p>
+<p align="left"><b>Is your ISP blocking port 25?<br>
+</b>Port 25 is the standard port used by smtp.&nbsp; Many ISPs have started to
+block that port outside of their own system.&nbsp; Why?&nbsp; Spammers are under
+fire from every direction, if a ISP lets spam go out thru their doors, it is not
+good for them or their clients, the spam can clog their own systems and some
+people have tried to sue.&nbsp; In order to protect themselves and their clients
+they have started blocking port 25, which keeps people connected thru them from
+connecting to any SMTP server but their own.&nbsp; If you have a site that is
+with a web host, not your ISP, chances are that you have never been able to send
+email using your web host's smtp server.&nbsp; If that is the case, your ISP
+have probably started blocking port 25.</p>
+<p align="left"><b>Connecting to a smtp server:<br>
+</b>Open your telnet program, in windows: click on the start button, select
+'Run...' and type telnet into the box and press enter.&nbsp; The standard telnet
+program should come up.</p>
+<p align="left">In the menu, select '<i><font color="#008080">Connect</font></i>',
+then '<font color="#008080">Remote System...</font>'.&nbsp; The standard Connect
+box should come up and ask for three things: Host Name, Term Type, and Port.</p>
+<ul>
+  <li>
+    <p align="left"><font color="#008080">Host Name</font>: <b>Your smtp server</b>
+    (smtp.yourdomain.com), if you don't have your own, use your ISP's which is
+    usually smtp.isp.com.</li>
+  <li>
+    <p align="left"><font color="#008080">Port</font>: <b>25</b></li>
+  <li>
+    <p align="left"><font color="#008080">Term Type</font>: <b>ANSI</b></li>
+</ul>
+<p align="left">Now press connect.&nbsp; I will put server responses in red and
+your commands in blue.<br>
+First the server should say something like this<br>
+<br>
+<font color="#FF0000">220 smtp5.jps.net ESMTP Sendmail 8.9.3/8.9.0; Wed, 29 Dec 1999 14:10:55 -0800 (PST)</font></p>
+<p align="left">The main thing in all this are the numbers in front as those
+have to adhere to the standard.&nbsp; If you receive a 220, you are fine.&nbsp;
+When your typing, you won't be able to see any letters, so make sure you know
+what your typing. Now, you will want to type this:</p>
+<p align="left"><font color="#00FFFF">ehlo me</font></p>
+<p align="left">Press enter.&nbsp; ehlo is a hello command, me could be your
+name or whatever, it doesn't matter.&nbsp; Some will say to use the helo
+command, ehlo is the newest incarnation of it, so use it.&nbsp; The server
+should come back with something like:<br>
+</p>
+<p align="left"><font color="#FF0000">250-smtp5.jps.net Hello 216-119-33-50.o1.jps.net [216.119.33.50], pleased to meet you<br>
+250-8BITMIME<br>
+250-SIZE 20000000<br>
+250-DSN<br>
+250-ONEX<br>
+250-XUSR<br>
+250 HELP&nbsp;</font></p>
+<p align="left">Main thing is the 250, which indicates successful.&nbsp; If you
+ever need to know a little more about some of the commands, issue the help
+command.&nbsp; It should return a nice list of commands that you can use.&nbsp;
+If you didn't get a 250, look at the error and see if you can correct it.&nbsp;
+If your host requires you to check your mail before connecting to the smtp
+server, make sure and do that.&nbsp; Now we will start our email by issuing the
+MAIL command, it will start the mail process.&nbsp; Make sure you use real
+addresses so you can tell if it worked.</p>
+<p align="left"><font color="#00FFFF">mail from: youraddress@yourdomain.com</font></p>
+<p align="left">Press enter.&nbsp;&nbsp;</p>
+<p align="left"><font color="#FF0000">250 youraddress@yourdomain.com... Sender ok</font></p>
+<p align="left">You should get a 250, address ok response.&nbsp; That means that
+the from address is good.&nbsp; Now we need to say who it is going to.&nbsp; To
+do that you use the RCPT (recipient) command.</p>
+<p align="left"><font color="#00FFFF">rcpt to: goingto@domain.com</font></p>
+<p align="left">Press enter.</p>
+<p align="left"><font color="#FF0000">250 goingto@domain.com... Recipient ok</font></p>
+<p align="left">Again, you should get a 250.&nbsp; Now we need to enter the rest
+of the message.&nbsp; Type:<br>
+</p>
+<p align="left"><font color="#00FFFF">data</font></p>
+<p align="left">Press enter.</p>
+<p align="left"><font color="#FF0000">354 Enter mail, end with "." on a line by itself&nbsp;</font></p>
+<p align="left">You should get a 354 response.&nbsp; You can now type your
+message.&nbsp; You have to include all the various headers that make the email
+look nice.&nbsp; Otherwise, it will look like the email just appeared blankly
+from no sender.&nbsp; So, type this stuff into the window:</p>
+<p align="left"><font color="#00FFFF">To: Whoever &lt;goingto@domain.com&gt;<br>
+From: Your Name &lt;youraddress@yourdomain.com&gt;<br>
+Subject: The subject of the message<br>
+Your message should go here.<br>
+Type whatever you want, it doens't really make a difference</font></p>
+<p align="left">Now, we need to end the message, this is done by putting a
+single dot on a line and pressing enter.&nbsp; Like this</p>
+<p align="left"><b><font color="#00FFFF">.</font></b></p>
+<p align="left"><font color="#FF0000">250 OAA24319 Message accepted for delivery
+</font></p>
+<p align="left">The server should return a 250.&nbsp; The message has been sent,
+unless you want to do some more mails, quit</p>
+<p align="left"><font color="#00FFFF">quit</font></p>
+<p align="left">Press enter</p>
+<p align="left">You should get a goodbye message and then connection lost to
+host..</p>
+<p align="left">Hopefully we will cover more in later chapters.</p>
+&nbsp;</body>
+
+</html>

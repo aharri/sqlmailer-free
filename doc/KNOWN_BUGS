@@ -1,0 +1,15 @@
+Debug: mail from: <Foobar verkkokauppa <iku@openbsd.fi>>
+Debug: rcpt to: <Foo Bar <iku@openbsd.fi>>
+Debug: rcpt to: <Bar <iku@openbsd.fi>>
+
+type = 'normal'
+
+You will get two normal mails, but both have the same To-header.
+Instead it should have two normal mails, but with a To-header looking
+like this:
+
+To: Foo Bar <iku@openbsd.fi>,Bar <iku@openbsd.fi>
+
+Conclusion: rcpt to works correctly although it could distinguish
+same recipient and mail only once, and that To-header is the buggy
+part.

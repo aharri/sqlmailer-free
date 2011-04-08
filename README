@@ -1,0 +1,12 @@
+Process mails from SQL and send them by connecting to an MTA.
+
+Designed to work together with E-commerce systems. Insert
+mails into SQL and process them with SQLmailer. Supports
+sending mail to a single recipient as well as sending to
+thousands in one go.
+
+Original code written by Jani Hast for OpenHosting Harri.
+
+Requirements:
+- MySQL
+- Any MTA listening on TCP should work

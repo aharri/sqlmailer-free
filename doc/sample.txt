@@ -1,0 +1,28 @@
+X-Original-To: iku@openbsd.fi
+Delivered-To: iku@openbsd.fi
+Mailing-List: contact vuln-dev-help@securityfocus.com; run by ezmlm
+Precedence: bulk
+List-Id: <vuln-dev.list-id.securityfocus.com>
+List-Post: <mailto:vuln-dev@securityfocus.com>
+List-Help: <mailto:vuln-dev-help@securityfocus.com>
+List-Unsubscribe: <mailto:vuln-dev-unsubscribe@securityfocus.com>
+List-Subscribe: <mailto:vuln-dev-subscribe@securityfocus.com>
+Resent-Sender: listbounce@securityfocus.com
+Sender: listbounce@securityfocus.com
+Errors-To: listbounce@securityfocus.com
+Delivered-To: mailing list vuln-dev@securityfocus.com
+Delivered-To: moderator for vuln-dev@securityfocus.com
+Received: (qmail 2965 invoked from network); 5 Jan 2007 22:55:58 -0000
+Message-ID: <20070105212443.60067.qmail@web51608.mail.yahoo.com>
+Date: Fri, 5 Jan 2007 13:24:43 -0800 (PST)
+From: WINNY THOMAS <winnymthomas@yahoo.com>
+Subject: Remote exploit for CA brightstor tapeeng (win2k SP4)
+To: vuln-dev@securityfocus.com
+
+Another, only List-* headers:
+
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-Owner: <mailto:ports-changes-owner@openbsd.org>
+List-Post: <mailto:ports-changes@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20ports-changes>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20ports-changes>
